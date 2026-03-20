@@ -1,25 +1,34 @@
-// Invincible Shining Wall Code for Sandboxels
+// Invincible Shining Wall for Sandboxels
 
-class InvincibleShiningWall {
-    constructor(x, y, width, height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-    }
+if (typeof elements !== 'undefined') {
+    registerElement();
+} else {
+    window.addEventListener('load', function() {
+        if (typeof elements !== 'undefined') {
+            registerElement();
+        }
+    });
+}
 
-    draw() {
-        // Logic to draw the wall
-        fill(255, 255, 255); // Example color for shiny effect
-        rect(this.x, this.y, this.width, this.height);
-    }
-
-    // Method to handle collision detection
-    isColliding(entity) {
-        // Code to check for collisions with other entities
-        return (entity.x < this.x + this.width &&
-                entity.x + entity.width > this.x &&
-                entity.y < this.y + this.height &&
-                entity.y + entity.height > this.y);
-    }
+function registerElement() {
+    elements.invincibleShiningWall = {
+        color: ["#ffffff", "#e6e6fa", "#f0f8ff"],
+        behavior: [
+            "XX|XX|XX",
+            "XX|XX|XX",
+            "XX|XX|XX"
+        ],
+        category: "special",
+        state: "solid",
+        density: 1000,
+        hardness: 10,
+        temp: 20,
+        tempHigh: 10000,
+        tempLow: -1000,
+        noFlow: true,
+        noSpread: true,
+        shine: 1.5,
+        name: "Invincible Shining Wall",
+        description: "An indestructible, shimmering wall"
+    };
 }
