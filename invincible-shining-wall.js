@@ -1,17 +1,7 @@
 // Invincible Shining Wall for Sandboxels
 
 if (typeof elements !== 'undefined') {
-    registerElement();
-} else {
-    window.addEventListener('load', function() {
-        if (typeof elements !== 'undefined') {
-            registerElement();
-        }
-    });
-}
-
-function registerElement() {
-    elements.invincibleShiningWall = {
+    elements.invincible_shining_wall = {
         color: ["#ffffff", "#e6e6fa", "#f0f8ff"],
         behavior: [
             "XX|XX|XX",
